@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASAT PJOK Kelas 8 - Media Pembelajaran & Ujian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for smooth transitions and hide/show logic */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .correct-bg { background-color: #d1fae5 !important; border-color: #10b981 !important; color: #065f46 !important;}
+        .wrong-bg { background-color: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b !important;}
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen">
+
+    <header class="bg-emerald-600 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold tracking-tight">ASAT PJOK Kelas 8</h1>
+                <p class="text-emerald-100 text-sm">Media Pembelajaran & Simulator Ujian</p>
+            </div>
+            <div class="flex bg-emerald-700/50 p-1 rounded-lg">
+                <button onclick="switchTab('materi')" id="btn-materi" class="px-5 py-2 rounded-md font-semibold text-sm transition-colors bg-white text-emerald-700 shadow-sm">Rangkuman Materi</button>
+                <button onclick="switchTab('ujian')" id="btn-ujian" class="px-5 py-2 rounded-md font-semibold text-sm transition-colors text-white hover:bg-emerald-500">Simulator Ujian</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8">
+        
+        <section id="materi" class="tab-content active space-y-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-slate-800">Rangkuman Materi PJOK</h2>
+                <p class="text-slate-500">Pelajari ringkasan di bawah ini sebelum memulai simulasi ujian.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold text-emerald-600 mb-3 border-b pb-2">1. Kebugaran Jasmani & Atletik</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-sm">
+                        <li><b>Kebugaran Jasmani:</b> Kemampuan tubuh melakukan aktivitas tanpa kelelahan berarti. Faktor yang mempengaruhinya: Umur, jenis kelamin, genetik, gizi, dan waktu istirahat.</li>
+                        <li><b>Endurance (Daya Tahan):</b> Kemampuan jantung, paru, dan otot bekerja lama. Contoh latihan: Lari jarak jauh (jogging), renang, bersepeda.</li>
+                        <li><b>Kekuatan & Daya Otot:</b> Contoh latihan kekuatan: Push-up, Sit-up, Angkat beban.</li>
+                        <li><b>Keseimbangan, Kecepatan, Kelincahan:</b> Keseimbangan dilatih dengan sikap kapal terbang. Kecepatan dengan lari sprint. Kelincahan dengan <i>shuttle run</i> dan zig-zag.</li>
+                        <li><b>Akurasi:</b> Ketepatan, dilatih dengan memanah atau melempar bola ke target.</li>
+                        <li><b>Lari Estafet:</b> Lari sambung secara beregu dengan membawa tongkat.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h3 class="text-xl font-bold text-amber-600 mb-3 border-b pb-2">2. Bola Besar (Sepak Bola, Futsal, Voli, Basket)</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-sm">
+                        <li><b>Penalti (Sepak Bola):</b> Terjadi jika ada pelanggaran berat atau <i>handball</i> oleh tim bertahan di dalam kotak penaltinya sendiri.</li>
+                        <li><b>Bola Voli:</b> Induk dunia adalah FIVB. Tujuan utama: menjatuhkan bola di area lawan. Peralatan: Net, bola voli, sepatu, lapangan. Teknik: <i>Block</i> (membendung serangan), <i>Servis</i> (awalan), <i>Passing</i> (mengumpan), <i>Smash</i> (pukulan keras mematikan).</li>
+                        <li><b>Bola Basket:</b> <i>Pivot</i> adalah gerakan berputar bertumpu pada satu kaki. <b>3 Shooting:</b> Set shoot, Jump shoot, Lay-up. <b>3 Passing:</b> Chest pass (dada), Bounce pass (pantul), Overhead pass (atas kepala).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-bold text-blue-600 mb-4 border-b pb-2">3. Posisi Futsal, Bulutangkis, & Olahraga Lain</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-slate-700 mb-2">Posisi Pemain Futsal</h4>
+                        <table class="w-full text-sm text-left border-collapse border border-slate-300">
+                            <tr class="bg-slate-100"><th class="border p-2">Posisi</th><th class="border p-2">Tugas</th></tr>
+                            <tr><td class="border p-2 font-semibold">Pivot</td><td class="border p-2">Penyerang murni, pencetak gol.</td></tr>
+                            <tr><td class="border p-2 font-semibold">Flank</td><td class="border p-2">Pemain sayap (kanan/kiri) penggerak serangan.</td></tr>
+                            <tr><td class="border p-2 font-semibold">Anchor</td><td class="border p-2">Pemain bertahan sekaligus pengatur serangan.</td></tr>
+                            <tr><td class="border p-2 font-semibold">Kiper</td><td class="border p-2">Penjaga gawang.</td></tr>
+                        </table>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <p><b>Bulutangkis:</b> Sistem perhitungan poin menggunakan <i>Rally Point</i> hingga poin 21. Kategori ganda: Putra (2 pria), Putri (2 wanita), Campuran (1 pria 1 wanita). <i>Smash</i> adalah pukulan menukik tajam ke area lawan.</p>
+                        <p><b>Bola Tangan (Handball):</b> Jika bola secara sengaja terkena kaki selain kiper, maka terjadi pelanggaran (foul).</p>
+                        <p><b>Galasin (Gobak Sodor):</b> Tujuan utamanya adalah melewati penjagaan lawan bolak-balik tanpa tersentuh.</p>
+                        <p><b>CFD Bekasi:</b> <i>Car Free Day</i> adalah hari bebas kendaraan bermotor untuk olahraga dan rekreasi massal. Lokasi utama di Kota Bekasi adalah <b>Jl. Ahmad Yani</b> (simpang BCP hingga Summarecon).</p>
+                        <p><b>Tujuan vs Manfaat:</b> Tujuan adalah target yang ingin dicapai saat bermain (misal: menang), sedangkan manfaat adalah efek positif setelah berolahraga (misal: sehat).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ujian" class="tab-content">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="border-b border-slate-200 pb-4 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-800">Simulator Ujian Interaktif</h2>
+                    <p class="text-sm text-slate-500 mt-1">Kerjakan seluruh soal di bawah ini. Nilai PG, Isian, B/S, dan Tarik Garis (Soal 1-35) akan dikalkulasi otomatis di akhir.</p>
+                </div>
+
+                <div id="quiz-container" class="space-y-10">
+                    </div>
+
+                <div class="mt-12 pt-8 border-t border-slate-200 flex flex-col items-center">
+                    <button onclick="calculateScore()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-10 rounded-full shadow-lg transition-transform transform hover:scale-105 text-lg">
+                        Selesaikan Ujian & Hitung Nilai
+                    </button>
+                    <div id="score-display" class="mt-6 text-center hidden">
+                        <p class="text-slate-500 font-semibold mb-1">Skor Akhir Anda (Soal 1-35):</p>
+                        <p class="text-5xl font-bold text-emerald-600" id="final-score">0</p>
+                        <p class="text-sm text-slate-500 mt-2">*Soal essay tidak termasuk dalam hitungan otomatis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            if(tabId === 'materi') {
+                document.getElementById('btn-materi').classList.replace('text-white', 'text-emerald-700');
+                document.getElementById('btn-materi').classList.replace('hover:bg-emerald-500', 'bg-white');
+                document.getElementById('btn-ujian').classList.replace('bg-white', 'hover:bg-emerald-500');
+                document.getElementById('btn-ujian').classList.replace('text-emerald-700', 'text-white');
+            } else {
+                document.getElementById('btn-ujian').classList.replace('text-white', 'text-emerald-700');
+                document.getElementById('btn-ujian').classList.replace('hover:bg-emerald-500', 'bg-white');
+                document.getElementById('btn-materi').classList.replace('bg-white', 'hover:bg-emerald-500');
+                document.getElementById('btn-materi').classList.replace('text-emerald-700', 'text-white');
+            }
+        }
+
+        // --- DATA SOAL 1 SAMPAI 40 ---
+        const questions = [
+            // BAGIAN 1: Pilihan Ganda (1-11)
+            { id: 1, type: 'pg', text: "Bentuk latihan yang bertujuan untuk meningkatkan kebugaran jasmani secara keseluruhan adalah...", opts: ["A. Duduk santai", "B. Circuit training", "C. Tidur siang", "D. Menonton TV"], ans: 1 },
+            { id: 2, type: 'pg', text: "Pengertian dari lari estafet adalah...", opts: ["A. Lari jarak jauh sendiri", "B. Lari gawang", "C. Lari sambung beregu membawa tongkat", "D. Lari marathon"], ans: 2 },
+            { id: 3, type: 'pg', text: "Gerakan memberikan dan menerima tongkat saat berlari adalah contoh utama dari gerakan...", opts: ["A. Tolak peluru", "B. Estafet", "C. Lompat jauh", "D. Lempar lembing"], ans: 1 },
+            { id: 4, type: 'pg', text: "Latihan yang tepat untuk melatih keseimbangan, kecepatan, dan kelincahan secara berturut-turut adalah...", opts: ["A. Sikap kapal terbang, lari sprint, lari zig-zag", "B. Push up, sit up, back up", "C. Lari marathon, senam, yoga", "D. Angkat beban, renang, memanah"], ans: 0 },
+            { id: 5, type: 'pg', text: "Push-up dan lari jarak jauh merupakan contoh latihan untuk melatih...", opts: ["A. Akurasi dan keseimbangan", "B. Kekuatan otot dan daya tahan (endurance)", "C. Kelenturan dan kecepatan", "D. Kelincahan dan ketepatan"], ans: 1 },
+            { id: 6, type: 'pg', text: "Latihan melempar bola tepat ke dalam keranjang atau memanah pada titik sasaran bertujuan untuk melatih...", opts: ["A. Power", "B. Akurasi (Ketepatan)", "C. Endurance", "D. Speed"], ans: 1 },
+            { id: 7, type: 'pg', text: "Faktor-faktor utama yang dapat mempengaruhi tingkat kebugaran jasmani seseorang, kecuali...", opts: ["A. Asupan gizi", "B. Usia dan Genetik", "C. Warna kulit", "D. Pola istirahat"], ans: 2 },
+            { id: 8, type: 'pg', text: "Penyebab utama terjadinya tendangan penalti dalam permainan sepak bola adalah...", opts: ["A. Bola keluar lapangan di sisi gawang", "B. Pelanggaran berat/handball oleh pemain bertahan di dalam kotak penaltinya sendiri", "C. Pemain penyerang melakukan offside", "D. Pergantian pemain"], ans: 1 },
+            { id: 9, type: 'pg', text: "Pengertian dari endurance dalam kebugaran jasmani adalah...", opts: ["A. Kemampuan otot mengangkat beban maksimal", "B. Kemampuan berpindah tempat dengan cepat", "C. Kemampuan jantung, paru, dan otot melakukan kerja dalam waktu yang lama tanpa kelelahan berarti", "D. Kemampuan merespon rangsangan"], ans: 2 },
+            { id: 10, type: 'pg', text: "Bentuk latihan yang fokus untuk melatih daya otot (muscular power) adalah...", opts: ["A. Lari pelan (jogging)", "B. Lompat tali, vertical jump", "C. Senam lantai", "D. Catur"], ans: 1 },
+            { id: 11, type: 'pg', text: "Kebugaran jasmani yang baik akan memberikan manfaat langsung berupa...", opts: ["A. Mudah lelah", "B. Peningkatan resiko cedera", "C. Mampu melakukan aktivitas sehari-hari dengan energi sisa", "D. Berat badan naik pesat"], ans: 2 },
+
+            // BAGIAN 2: Ceklis / Checkbox (12-16)
+            { id: 12, type: 'check', text: "Pilihlah bentuk-bentuk latihan yang berfungsi untuk melatih KELINCAHAN (Agility):", opts: ["Lari Zig-zag", "Lari jarak jauh 5km", "Shuttle run (Lari bolak-balik)"], ans: [0, 2] },
+            { id: 13, type: 'check', text: "Manakah pernyataan yang BENAR mengenai sistem ganda dalam permainan bulutangkis?", opts: ["Ganda putra dimainkan oleh 2 pemain pria dalam 1 tim", "Ganda campuran dimainkan oleh 1 pria & 1 wanita dalam 1 tim", "Ganda putri dimainkan oleh 1 pria & 1 wanita"], ans: [0, 1] },
+            { id: 14, type: 'check', text: "Pilih pengertian teknik yang BENAR pada bola voli:", opts: ["Servis: Pukulan awal untuk memulai permainan", "Passing bawah/atas: Teknik memblokir serangan lawan", "Smash: Pukulan keras dan menukik tajam"], ans: [0, 2] },
+            { id: 15, type: 'check', text: "Pengertian teknik smash pada permainan bulutangkis adalah...", opts: ["Pukulan lambung ke belakang", "Pukulan keras menukik ke area lawan untuk mematikan", "Pukulan tipuan dekat net"], ans: [1] },
+            { id: 16, type: 'check', text: "Bentuk latihan kelincahan lainnya yang umum dipraktekkan di sekolah adalah...", opts: ["Lompat melewati rintangan", "Tidur terlentang", "Lari menghindari cone (rintangan)"], ans: [0, 2] },
+
+            // BAGIAN 3: Isian (17-21)
+            { id: 17, type: 'fill', text: "Gerakan berputar bertumpu pada satu kaki untuk melindungi bola dari rebutan lawan pada bola basket disebut...", ans: "pivot" },
+            { id: 18, type: 'fill', text: "Sebutkan salah satu teknik shooting di bola basket (Set shoot / Jump shoot / Lay-up):", ans: ["set shoot", "jump shoot", "lay-up", "lay up"] },
+            { id: 19, type: 'fill', text: "Teknik lemparan setinggi dada pada permainan bola basket disebut...", ans: ["chest pass"] },
+            { id: 20, type: 'fill', text: "Teknik melempar bola basket dengan cara dipantulkan ke lantai disebut...", ans: ["bounce pass"] },
+            { id: 21, type: 'fill', text: "Teknik lemparan bola basket dari atas kepala disebut...", ans: ["overhead pass"] },
+
+            // BAGIAN 4: Benar/Salah (22-26)
+            { id: 22, type: 'tf', text: "Tujuan akhir bermain galasin (gobak sodor) adalah melempar bola mengenai lawan.", ans: false },
+            { id: 23, type: 'tf', text: "Jumlah poin akhir (sistem rally point) dalam 1 set permainan bulutangkis adalah 21 poin.", ans: true },
+            { id: 24, type: 'tf', text: "Pada permainan bola tangan (handball), jika bola secara tidak sengaja atau sengaja mengenai bagian kaki pemain (selain kiper), maka hal tersebut dianggap pelanggaran/foul.", ans: true },
+            { id: 25, type: 'tf', text: "Dalam permainan futsal, pemain berposisi 'Pivot' bertugas sebagai penyerang murni/target man.", ans: true },
+            { id: 26, type: 'tf', text: "Posisi 'Flank' pada futsal bertugas menjaga gawang, dan 'Anchor' bertugas mencetak gol murni.", ans: false },
+
+            // BAGIAN 5: Tarik Garis / Match Dropdown (27-35)
+            { id: 27, type: 'match', text: "Teknik membendung serangan smash dari lawan di depan net pada bola voli disebut...", opts: ["Pilih Jawaban", "Block", "Servis", "Passing"], ans: 1 },
+            { id: 28, type: 'match', text: "Teknik mengumpan bola kepada teman atau menerima servis pada bola voli disebut...", opts: ["Pilih Jawaban", "Smash", "Passing", "Block"], ans: 2 },
+            { id: 29, type: 'match', text: "Peralatan utama untuk memisahkan area lapangan tim A dan tim B pada bola voli adalah...", opts: ["Pilih Jawaban", "Gawang", "Net", "Ring"], ans: 2 },
+            { id: 30, type: 'match', text: "Organisasi / Federasi bola voli tingkat dunia adalah...", opts: ["Pilih Jawaban", "FIFA", "BWF", "FIVB"], ans: 3 },
+            { id: 31, type: 'match', text: "Teknik pukulan pertama (awalan) melawati net untuk memulai permainan bola voli...", opts: ["Pilih Jawaban", "Servis", "Passing", "Block"], ans: 1 },
+            { id: 32, type: 'match', text: "Tujuan utama permainan bola voli adalah...", opts: ["Pilih Jawaban", "Mencetak gol ke gawang", "Menjatuhkan bola di area permainan lawan", "Mencetak keranjang"], ans: 2 },
+            { id: 33, type: 'match', text: "Benda bundar berbahan kulit/sintetis yang dipukul bolak-balik dalam permainan voli adalah...", opts: ["Pilih Jawaban", "Kok/Shuttlecock", "Bola voli", "Bola kasti"], ans: 2 },
+            { id: 34, type: 'match', text: "Teknik pukulan menukik tajam dan keras ke area lawan dalam bola voli disebut...", opts: ["Pilih Jawaban", "Smash / Spike", "Servis Atas", "Passing Bawah"], ans: 1 },
+            { id: 35, type: 'match', text: "Alat pelindung/perlengkapan pada kaki yang digunakan pemain voli agar tidak terpeleset di lapangan adalah...", opts: ["Pilih Jawaban", "Dekker", "Sepatu olahraga", "Sarung tangan"], ans: 2 },
+
+            // BAGIAN 6: Essay (36-40)
+            { id: 36, type: 'essay', text: "Jelaskan pengertian teknik Block (membendung) pada permainan bola besar (khususnya bola voli)!" , ans: "Block adalah upaya yang dilakukan oleh pemain bertahan di dekat net dengan melompat dan merentangkan kedua tangan ke atas untuk menghalangi/membendung arah laju bola serangan (smash) dari lawan agar tidak masuk ke area pertahanan." },
+            { id: 37, type: 'essay', text: "Apa pengertian dari olahraga CFD (Car Free Day) dan sebutkan lokasi CFD utama di Kota Bekasi!", ans: "CFD (Hari Bebas Kendaraan Bermotor) adalah kampanye pengurangan emisi di mana jalanan tertentu ditutup untuk kendaraan bermotor agar warga dapat berolahraga dan rekreasi. Lokasi utama di Kota Bekasi berada di Jl. Ahmad Yani (Mulai dari simpang BCP hingga jembatan layang Summarecon)." },
+            { id: 38, type: 'essay', text: "Jelaskan perbedaan antara 'Tujuan' dan 'Manfaat' pada sebuah permainan atau olahraga!", ans: "Tujuan adalah hasil akhir yang ingin diraih pada saat permainan berlangsung (contoh: mencetak poin, mengalahkan lawan). Sedangkan Manfaat adalah dampak positif yang didapatkan oleh tubuh/mental setelah melakukan olahraga tersebut (contoh: badan menjadi sehat, stres berkurang, otot kuat)." },
+            { id: 39, type: 'essay', text: "Sebutkan 2 bentuk latihan untuk melatih kecepatan (speed) tubuh!", ans: "Bentuk latihannya antara lain: Lari sprint jarak pendek (30 meter, 50 meter), lari akselerasi, lari menaiki bukit/tangga." },
+            { id: 40, type: 'essay', text: "Bagaimana cara untuk mencegah gagalnya latihan / terjadinya cedera saat melatih kecepatan?", ans: "Untuk mencegah cedera saat latihan kecepatan, kita harus: \n1. Melakukan pemanasan (warming-up) secara menyeluruh. \n2. Melakukan peregangan (stretching) khusus pada otot kaki. \n3. Memakai sepatu yang sesuai. \n4. Tidak memaksakan diri jika tubuh terasa nyeri." }
+        ];
+
+        let userAnswers = {}; // Untuk simpan jawaban sementara user
+
+        function renderQuestions() {
+            const container = document.getElementById('quiz-container');
+            let html = '';
+
+            // Helper untuk pembatas kategori
+            const categoryTitles = {
+                1: "Bagian 1: Pilihan Ganda", 12: "Bagian 2: Ceklis Pilihan Benar", 
+                17: "Bagian 3: Isian Singkat", 22: "Bagian 4: Benar / Salah",
+                27: "Bagian 5: Pasangkan / Mencocokkan", 36: "Bagian 6: Essay / Uraian"
+            };
+
+            questions.forEach((q, index) => {
+                if (categoryTitles[q.id]) {
+                    html += `<h3 class="text-xl font-bold mt-10 mb-4 text-emerald-800 border-b-2 border-emerald-200 pb-2">${categoryTitles[q.id]}</h3>`;
+                }
+
+                html += `<div class="mb-6 p-5 bg-slate-50 border border-slate-200 rounded-lg shadow-sm">
+                            <p class="font-semibold text-slate-800 mb-3"><span class="text-emerald-600 mr-2">${q.id}.</span> ${q.text}</p>`;
+
+                if (q.type === 'pg') {
+                    html += `<div class="grid gap-2">`;
+                    q.opts.forEach((opt, idx) => {
+                        html += `<button id="btn-pg-${q.id}-${idx}" onclick="handlePG(${q.id}, ${idx}, ${q.ans})" class="text-left w-full p-3 rounded-md border border-slate-300 bg-white hover:bg-slate-100 transition-colors">${opt}</button>`;
+                    });
+                    html += `</div>`;
+                } 
+                else if (q.type === 'check') {
+                    html += `<div class="space-y-2">`;
+                    q.opts.forEach((opt, idx) => {
+                        html += `<label class="flex items-center space-x-3 p-2 border border-slate-200 rounded-md bg-white cursor-pointer hover:bg-slate-50">
+                                    <input type="checkbox" onchange="handleCheck(${q.id}, this, ${idx})" class="form-checkbox h-5 w-5 text-emerald-600">
+                                    <span>${opt}</span>
+                                 </label>`;
+                    });
+                    html += `</div>`;
+                }
+                else if (q.type === 'fill') {
+                    html += `<input type="text" id="ans-${q.id}" onblur="handleFill(${q.id}, this.value)" placeholder="Ketik jawaban di sini..." class="w-full p-3 border border-slate-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:outline-none">`;
+                }
+                else if (q.type === 'tf') {
+                    html += `<div class="flex space-x-4">
+                                <button id="tf-${q.id}-true" onclick="handleTF(${q.id}, true, ${q.ans})" class="px-6 py-2 border border-slate-300 rounded-md bg-white hover:bg-slate-100 font-semibold">Benar</button>
+                                <button id="tf-${q.id}-false" onclick="handleTF(${q.id}, false, ${q.ans})" class="px-6 py-2 border border-slate-300 rounded-md bg-white hover:bg-slate-100 font-semibold">Salah</button>
+                             </div>`;
+                }
+                else if (q.type === 'match') {
+                    html += `<select id="ans-${q.id}" onchange="handleMatch(${q.id}, this.value)" class="w-full md:w-1/2 p-3 border border-slate-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500">`;
+                    q.opts.forEach((opt, idx) => {
+                        html += `<option value="${idx}">${opt}</option>`;
+                    });
+                    html += `</select>`;
+                }
+                else if (q.type === 'essay') {
+                    html += `<textarea rows="3" class="w-full p-3 border border-slate-300 rounded-md mb-3 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Ketik jawaban essay-mu di sini..."></textarea>
+                             <button onclick="toggleEssayKey(${q.id})" class="text-sm bg-slate-200 hover:bg-slate-300 text-slate-700 px-4 py-2 rounded-md font-medium transition-colors">Lihat Kunci Jawaban / Pembahasan</button>
+                             <div id="key-${q.id}" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 rounded-md text-emerald-900 text-sm whitespace-pre-wrap">${q.ans}</div>`;
+                }
+                
+                html += `</div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Interaksi Instan untuk Pilihan Ganda & True/False
+        function handlePG(qId, selectedIdx, correctIdx) {
+            userAnswers[qId] = (selectedIdx === correctIdx) ? 1 : 0;
+            // Reset colors
+            const q = questions.find(x => x.id === qId);
+            q.opts.forEach((_, idx) => {
+                const btn = document.getElementById(`btn-pg-${qId}-${idx}`);
+                btn.className = "text-left w-full p-3 rounded-md border border-slate-300 bg-white hover:bg-slate-100 transition-colors pointer-events-none opacity-50";
+            });
+            // Set result colors
+            const selectedBtn = document.getElementById(`btn-pg-${qId}-${selectedIdx}`);
+            const correctBtn = document.getElementById(`btn-pg-${qId}-${correctIdx}`);
+            correctBtn.classList.add('correct-bg');
+            correctBtn.classList.remove('opacity-50');
+            if(selectedIdx !== correctIdx) {
+                selectedBtn.classList.add('wrong-bg');
+                selectedBtn.classList.remove('opacity-50');
+            }
+        }
+
+        function handleTF(qId, selectedBool, correctBool) {
+            userAnswers[qId] = (selectedBool === correctBool) ? 1 : 0;
+            const btnTrue = document.getElementById(`tf-${qId}-true`);
+            const btnFalse = document.getElementById(`tf-${qId}-false`);
+            btnTrue.classList.add('pointer-events-none', 'opacity-50');
+            btnFalse.classList.add('pointer-events-none', 'opacity-50');
+            
+            const selectedBtn = selectedBool ? btnTrue : btnFalse;
+            const correctBtn = correctBool ? btnTrue : btnFalse;
+            
+            correctBtn.classList.add('correct-bg');
+            correctBtn.classList.remove('opacity-50');
+            if(selectedBool !== correctBool) {
+                selectedBtn.classList.add('wrong-bg');
+                selectedBtn.classList.remove('opacity-50');
+            }
+        }
+
+        function handleCheck(qId, checkbox, optIdx) {
+            if (!userAnswers[qId]) userAnswers[qId] = [];
+            if (checkbox.checked) {
+                userAnswers[qId].push(optIdx);
+            } else {
+                userAnswers[qId] = userAnswers[qId].filter(x => x !== optIdx);
+            }
+        }
+
+        function handleFill(qId, val) {
+            userAnswers[qId] = val.trim().toLowerCase();
+        }
+
+        function handleMatch(qId, val) {
+            userAnswers[qId] = parseInt(val);
+        }
+
+        function toggleEssayKey(qId) {
+            const el = document.getElementById(`key-${qId}`);
+            if(el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+                el.classList.add('block', 'animate-pulse');
+                setTimeout(()=>el.classList.remove('animate-pulse'), 500);
+            } else {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            }
+        }
+
+        // Kalkulasi Skor Akhir (Soal 1 - 35)
+        function calculateScore() {
+            let correctCount = 0;
+            let totalScoredQs = 35; // Essay tidak dihitung
+
+            questions.forEach(q => {
+                if(q.id > 35) return; // Skip essay
+                let isCorrect = false;
+
+                if (q.type === 'pg' || q.type === 'tf') {
+                    if(userAnswers[q.id] === 1) isCorrect = true;
+                } 
+                else if (q.type === 'check') {
+                    const userArr = userAnswers[q.id] || [];
+                    const sortedUser = [...userArr].sort();
+                    const sortedAns = [...q.ans].sort();
+                    if(JSON.stringify(sortedUser) === JSON.stringify(sortedAns)) isCorrect = true;
+                }
+                else if (q.type === 'fill') {
+                    const userAns = userAnswers[q.id] || "";
+                    if (Array.isArray(q.ans)) {
+                        if (q.ans.includes(userAns)) isCorrect = true;
+                    } else {
+                        if (userAns === q.ans) isCorrect = true;
+                    }
+                }
+                else if (q.type === 'match') {
+                    if(userAnswers[q.id] === q.ans) isCorrect = true;
+                }
+
+                if(isCorrect) correctCount++;
+            });
+
+            const finalScore = Math.round((correctCount / totalScoredQs) * 100);
+            const scoreDisplay = document.getElementById('score-display');
+            document.getElementById('final-score').innerText = `${finalScore} (Benar ${correctCount}/${totalScoredQs})`;
+            scoreDisplay.classList.remove('hidden');
+            scoreDisplay.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
+
+        // Inisialisasi saat load
+        window.onload = () => {
+            renderQuestions();
+        };
+    </script>
+</body>
+</html>
